@@ -156,6 +156,8 @@ def send_all():
 
                     # connection can't be stored in the MessageLog
                     email.connection = None
+                    # Anymail status can't be stored in the MessageLog
+                    email.anymail_status = None
                     message.email = email  # For the sake of MessageLog
                     MessageLog.objects.log(message, RESULT_SUCCESS)
                     sent += 1
